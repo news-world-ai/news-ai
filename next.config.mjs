@@ -5,22 +5,23 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'picsum.photos',
+        pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: '**.vercel.app',
-      }
     ],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  // Ensure output is configured for Vercel
-  output: 'standalone',
   // Enable static optimization
   reactStrictMode: true,
-  swcMinify: true,
   // Configure trailing slashes
   trailingSlash: false,
   // Configure powered by header
   poweredByHeader: false,
+  // Experimental features
+  experimental: {
+    optimizeCss: true,
+    scrollRestoration: true
+  }
 };
 
 export default nextConfig;

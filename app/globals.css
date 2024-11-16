@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: 245, 245, 245;
+  --background-rgb: 255, 255, 255;
 }
 
 body {
@@ -14,91 +14,109 @@ body {
 
 @layer components {
   .news-card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+    @apply bg-white rounded-lg overflow-hidden transition-all duration-300;
   }
   
   .category-badge {
-    @apply inline-block px-2 py-1 text-sm font-semibold rounded-full;
+    @apply inline-block px-2 py-1 text-xs font-semibold rounded;
   }
   
-  .category-crypto {
-    @apply text-orange-600 bg-orange-100;
+  .category-breaking {
+    @apply bg-red-600 text-white;
   }
   
-  .category-defi {
-    @apply text-purple-600 bg-purple-100;
+  .category-world {
+    @apply bg-blue-100 text-blue-800;
   }
   
-  .category-finance {
-    @apply text-green-600 bg-green-100;
+  .category-politics {
+    @apply bg-purple-100 text-purple-800;
   }
   
-  .category-nft {
-    @apply text-blue-600 bg-blue-100;
+  .category-business {
+    @apply bg-green-100 text-green-800;
   }
   
-  .category-regulation {
-    @apply text-red-600 bg-red-100;
+  .category-tech {
+    @apply bg-indigo-100 text-indigo-800;
+  }
+  
+  .category-sports {
+    @apply bg-orange-100 text-orange-800;
+  }
+
+  .category-health {
+    @apply bg-emerald-100 text-emerald-800;
+  }
+
+  .category-entertainment {
+    @apply bg-pink-100 text-pink-800;
+  }
+
+  .category-climate {
+    @apply bg-teal-100 text-teal-800;
+  }
+
+  /* Image container styles */
+  .responsive-image-wrapper {
+    @apply relative w-full;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  }
+
+  .responsive-image-wrapper > div {
+    @apply absolute inset-0;
+  }
+
+  .responsive-image-wrapper > div > div {
+    @apply relative w-full h-full;
+  }
+
+  /* Latest news image container */
+  .latest-news-image {
+    @apply relative w-32 h-24 flex-shrink-0;
+  }
+
+  .latest-news-image > div {
+    @apply relative w-full h-full;
   }
 }
 
-/* Crypto Price Ticker Animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Custom hover effects */
+.news-card:hover .news-title {
+  @apply text-red-600;
 }
 
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-  display: inline-flex;
-  white-space: nowrap;
+/* Typography */
+.headline {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
 }
 
-.animate-scroll > * {
-  white-space: nowrap;
+.subheadline {
+  @apply text-lg md:text-xl text-gray-600 leading-relaxed;
 }
 
-/* Price Change Animations */
-@keyframes priceUp {
-  0%, 100% {
-    color: rgb(34, 197, 94);
-  }
-  50% {
-    color: rgb(22, 163, 74);
-  }
+/* Navigation styles */
+.nav-link {
+  @apply text-gray-700 hover:text-red-600 transition-colors duration-200;
 }
 
-@keyframes priceDown {
-  0%, 100% {
-    color: rgb(239, 68, 68);
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  50% {
-    color: rgb(220, 38, 38);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.price-up {
-  animation: priceUp 2s ease-in-out;
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
-.price-down {
-  animation: priceDown 2s ease-in-out;
-}
-
-/* Market Overview Card Hover Effects */
-.market-card {
-  @apply transition-all duration-300 ease-in-out;
-}
-
-.market-card:hover {
-  @apply transform -translate-y-1 shadow-lg;
-}
-
-/* Custom Scrollbar */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -116,63 +134,28 @@ body {
   @apply bg-gray-500;
 }
 
-/* Breaking News Animation */
-@keyframes breakingNews {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+/* Layout utilities */
+.content-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
 }
 
-.breaking-news-scroll {
-  animation: breakingNews 20s linear infinite;
+.section-title {
+  @apply text-2xl font-bold mb-6 pb-2 border-b border-gray-200;
 }
 
-/* Image Hover Effects */
-.image-zoom {
-  @apply transition-transform duration-300;
+/* CNN-style layout classes */
+.cnn-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-.news-card:hover .image-zoom {
-  transform: scale(1.05);
+.cnn-section {
+  @apply mb-8 border-b border-gray-200 pb-8;
 }
 
-/* Typography */
-.crypto-price {
-  @apply font-mono text-2xl font-bold;
+.cnn-headline {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900;
 }
 
-.price-change {
-  @apply font-mono text-sm font-medium;
-}
-
-/* Loading Skeleton Animation */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-/* Gradient Backgrounds */
-.crypto-gradient {
-  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
-}
-
-.defi-gradient {
-  background: linear-gradient(135deg, #311b92 0%, #4527a0 100%);
-}
-
-.nft-gradient {
-  background: linear-gradient(135deg, #1565c0 0%, #0288d1 100%);
+.cnn-subheadline {
+  @apply text-xl text-gray-600 leading-relaxed;
 }
