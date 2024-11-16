@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 245, 245, 245;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer components {
+  .news-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+  }
+  
+  .category-badge {
+    @apply inline-block px-2 py-1 text-sm font-semibold rounded-full;
+  }
+  
+  .category-breaking {
+    @apply text-white bg-red-600;
+  }
+  
+  .category-politics {
+    @apply text-blue-600 bg-blue-100;
+  }
+  
+  .category-technology {
+    @apply text-purple-600 bg-purple-100;
+  }
+  
+  .category-business {
+    @apply text-green-600 bg-green-100;
+  }
+  
+  .category-science {
+    @apply text-indigo-600 bg-indigo-100;
+  }
+  
+  .category-health {
+    @apply text-pink-600 bg-pink-100;
+  }
+  
+  .category-entertainment {
+    @apply text-yellow-600 bg-yellow-100;
+  }
+  
+  .category-sports {
+    @apply text-orange-600 bg-orange-100;
+  }
+}
+
+/* Custom hover effects */
+.news-card:hover .news-title {
+  @apply text-red-600;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Breaking news animation */
+@keyframes breakingNews {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.breaking-news-scroll {
+  animation: breakingNews 20s linear infinite;
+}
+
+/* Image hover effects */
+.image-zoom {
+  @apply transition-transform duration-300;
+}
+
+.news-card:hover .image-zoom {
+  transform: scale(1.05);
+}
+
+/* Typography enhancements */
+.headline {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+}
+
+.subheadline {
+  @apply text-lg md:text-xl text-gray-600 leading-relaxed;
+}
+
+/* Interactive elements */
+.interactive-button {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+.interactive-button:hover {
+  @apply bg-opacity-90;
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
