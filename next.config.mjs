@@ -19,7 +19,6 @@ const nextConfig = {
   poweredByHeader: false,
   // Experimental features
   experimental: {
-    optimizeCss: true,
     scrollRestoration: true
   }
 };

@@ -1,19 +1,19 @@
 export const breakingNews = {
   id: 1,
-  title: "Russia-Ukraine War: Major Developments on the Frontlines",
-  description: "Analysis shows significant shifts in military positions as international support continues to play crucial role in ongoing conflict.",
+  title: "'PUMP' Meme Coin Surges 500% on Solana Network",
+  description: "New Solana-based meme token '13DB6vz6AVBnPkQdA4GbRTTGtpiZutbM47N1arKhpump' gains massive traction amid growing interest in alternative cryptocurrencies.",
   image: "https://picsum.photos/1200/600?random=1",
-  category: "Breaking",
+  category: "Crypto",
   date: "2024-02-16"
 };
 
 export const featuredNews = [
   {
     id: 2,
-    title: "Trump's Immigration Plans Come Into Focus",
-    description: "Former president's transition team outlines detailed strategy for border policy changes.",
+    title: "Bitcoin Surges Past $100,000 in Historic Rally",
+    description: "Cryptocurrency market reaches new milestone as institutional adoption drives unprecedented growth in digital assets.",
     image: "https://picsum.photos/800/400?random=2",
-    category: "Politics",
+    category: "Crypto",
     date: "2024-02-16"
   },
   {
@@ -34,10 +34,10 @@ export const featuredNews = [
   },
   {
     id: 5,
-    title: "Historic Boxing Match Results Shock Fans",
-    description: "Unexpected outcome in highly anticipated heavyweight bout surprises spectators.",
+    title: "SEC Approves Spot Ethereum ETFs",
+    description: "Major regulatory breakthrough as Securities and Exchange Commission gives green light to multiple Ethereum exchange-traded funds.",
     image: "https://picsum.photos/800/400?random=5",
-    category: "Sports",
+    category: "Crypto",
     date: "2024-02-16"
   }
 ];
@@ -45,10 +45,10 @@ export const featuredNews = [
 export const latestNews = [
   {
     id: 6,
-    title: "Middle East Peace Talks Resume",
-    description: "Key diplomatic breakthrough as regional leaders agree to new round of negotiations.",
+    title: "PUMP Token: The Latest Sensation in Solana's Meme Coin Ecosystem",
+    description: "Community-driven token gains rapid social media attention as traders speculate on the next big meme coin phenomenon.",
     image: "https://picsum.photos/800/400?random=6",
-    category: "World",
+    category: "Crypto",
     date: "2024-02-16"
   },
   {
@@ -61,26 +61,26 @@ export const latestNews = [
   },
   {
     id: 8,
-    title: "Global Markets React to Economic Data",
-    description: "Stock indices show volatility as investors process new inflation figures.",
+    title: "Central Banks Pilot Digital Currency Programs",
+    description: "Major economies accelerate CBDC development as cryptocurrency adoption challenges traditional financial systems.",
     image: "https://picsum.photos/800/400?random=8",
-    category: "Business",
+    category: "Crypto",
     date: "2024-02-16"
   },
   {
     id: 9,
-    title: "Climate Summit Reaches Historic Agreement",
-    description: "Nations commit to ambitious emission reduction targets in landmark deal.",
+    title: "NFT Gaming Platform Announces Revolutionary Blockchain Integration",
+    description: "Leading gaming studio unveils plans for cross-chain NFT marketplace and play-to-earn ecosystem.",
     image: "https://picsum.photos/800/400?random=9",
-    category: "Climate",
+    category: "Crypto",
     date: "2024-02-16"
   },
   {
     id: 10,
-    title: "Entertainment Industry Faces Major Shift",
-    description: "Streaming platforms announce revolutionary changes to content distribution model.",
+    title: "Crypto Mining Industry Achieves Carbon Neutrality",
+    description: "Major mining operations complete transition to renewable energy sources, addressing environmental concerns.",
     image: "https://picsum.photos/800/400?random=10",
-    category: "Entertainment",
+    category: "Crypto",
     date: "2024-02-16"
   }
 ];

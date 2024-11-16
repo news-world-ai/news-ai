@@ -2,160 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --cnn-red: #cc0000;
+  --cnn-blue: #1b386b;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  @apply bg-[#fafafa];
 }
 
-@layer components {
-  .news-card {
-    @apply bg-white rounded-lg overflow-hidden transition-all duration-300;
-  }
-  
-  .category-badge {
-    @apply inline-block px-2 py-1 text-xs font-semibold rounded;
-  }
-  
-  .category-breaking {
-    @apply bg-red-600 text-white;
-  }
-  
-  .category-world {
-    @apply bg-blue-100 text-blue-800;
-  }
-  
-  .category-politics {
-    @apply bg-purple-100 text-purple-800;
-  }
-  
-  .category-business {
-    @apply bg-green-100 text-green-800;
-  }
-  
-  .category-tech {
-    @apply bg-indigo-100 text-indigo-800;
-  }
-  
-  .category-sports {
-    @apply bg-orange-100 text-orange-800;
-  }
-
-  .category-health {
-    @apply bg-emerald-100 text-emerald-800;
-  }
-
-  .category-entertainment {
-    @apply bg-pink-100 text-pink-800;
-  }
-
-  .category-climate {
-    @apply bg-teal-100 text-teal-800;
-  }
-
-  /* Image container styles */
-  .responsive-image-wrapper {
-    @apply relative w-full;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  }
-
-  .responsive-image-wrapper > div {
-    @apply absolute inset-0;
-  }
-
-  .responsive-image-wrapper > div > div {
-    @apply relative w-full h-full;
-  }
-
-  /* Latest news image container */
-  .latest-news-image {
-    @apply relative w-32 h-24 flex-shrink-0;
-  }
-
-  .latest-news-image > div {
-    @apply relative w-full h-full;
-  }
+/* News card styles */
+.news-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-sm transition-shadow duration-200 hover:shadow-md;
 }
 
-/* Custom hover effects */
-.news-card:hover .news-title {
-  @apply text-red-600;
+.responsive-image-wrapper {
+  @apply relative w-full pt-[56.25%];
 }
 
-/* Typography */
-.headline {
-  @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+.responsive-image-wrapper > div {
+  @apply absolute inset-0 overflow-hidden;
 }
 
-.subheadline {
-  @apply text-lg md:text-xl text-gray-600 leading-relaxed;
+.responsive-image-wrapper > div > div {
+  @apply relative w-full h-full;
 }
 
-/* Navigation styles */
-.nav-link {
-  @apply text-gray-700 hover:text-red-600 transition-colors duration-200;
+/* Latest news image */
+.latest-news-image {
+  @apply relative flex-shrink-0 w-32 h-20 overflow-hidden;
 }
 
-/* Custom animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.latest-news-image > div {
+  @apply relative w-full h-full;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+/* Category badges */
+.category-badge {
+  @apply px-2 py-0.5 text-xs font-semibold rounded-sm;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.category-breaking {
+  @apply bg-[#cc0000] text-white;
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+.category-world {
+  @apply bg-[#1b386b] text-white;
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 rounded-full;
+.category-politics {
+  @apply bg-[#6b1b38] text-white;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-500;
+.category-business {
+  @apply bg-[#386b1b] text-white;
 }
 
-/* Layout utilities */
-.content-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+.category-tech {
+  @apply bg-[#1b6b38] text-white;
 }
 
-.section-title {
-  @apply text-2xl font-bold mb-6 pb-2 border-b border-gray-200;
+.category-health {
+  @apply bg-[#6b381b] text-white;
 }
 
-/* CNN-style layout classes */
-.cnn-container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+.category-entertainment {
+  @apply bg-[#381b6b] text-white;
 }
 
-.cnn-section {
-  @apply mb-8 border-b border-gray-200 pb-8;
+.category-style {
+  @apply bg-[#6b1b6b] text-white;
 }
 
-.cnn-headline {
-  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900;
+.category-travel {
+  @apply bg-[#1b6b6b] text-white;
 }
 
-.cnn-subheadline {
-  @apply text-xl text-gray-600 leading-relaxed;
+.category-sports {
+  @apply bg-[#6b6b1b] text-white;
+}
+
+.category-crypto {
+  @apply bg-[#f7931a] text-white;
+}
+
+/* News title line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Article prose styles */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold mb-6 text-gray-900;
+}
+
+.prose p {
+  @apply text-lg text-gray-700 mb-6 leading-relaxed;
+}
+
+/* Sticky header adjustments */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* CNN-style link hover effects */
+.cnn-link {
+  @apply text-[#cc0000] hover:text-[#990000] transition-colors duration-200;
+}
+
+/* Advertisement placeholder */
+.ad-placeholder {
+  @apply bg-gray-100 p-4 text-center text-gray-500 text-sm rounded-lg;
 }
