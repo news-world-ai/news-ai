@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 245, 245, 245;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer components {
+  .news-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+  }
+  
+  .category-badge {
+    @apply inline-block px-2 py-1 text-sm font-semibold rounded-full;
+  }
+  
+  .category-crypto {
+    @apply text-orange-600 bg-orange-100;
+  }
+  
+  .category-defi {
+    @apply text-purple-600 bg-purple-100;
+  }
+  
+  .category-finance {
+    @apply text-green-600 bg-green-100;
+  }
+  
+  .category-nft {
+    @apply text-blue-600 bg-blue-100;
+  }
+  
+  .category-regulation {
+    @apply text-red-600 bg-red-100;
+  }
+}
+
+/* Crypto Price Ticker Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.animate-scroll > * {
+  white-space: nowrap;
+}
+
+/* Price Change Animations */
+@keyframes priceUp {
+  0%, 100% {
+    color: rgb(34, 197, 94);
+  }
+  50% {
+    color: rgb(22, 163, 74);
+  }
+}
+
+@keyframes priceDown {
+  0%, 100% {
+    color: rgb(239, 68, 68);
+  }
+  50% {
+    color: rgb(220, 38, 38);
+  }
+}
+
+.price-up {
+  animation: priceUp 2s ease-in-out;
+}
+
+.price-down {
+  animation: priceDown 2s ease-in-out;
+}
+
+/* Market Overview Card Hover Effects */
+.market-card {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.market-card:hover {
+  @apply transform -translate-y-1 shadow-lg;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Breaking News Animation */
+@keyframes breakingNews {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.breaking-news-scroll {
+  animation: breakingNews 20s linear infinite;
+}
+
+/* Image Hover Effects */
+.image-zoom {
+  @apply transition-transform duration-300;
+}
+
+.news-card:hover .image-zoom {
+  transform: scale(1.05);
+}
+
+/* Typography */
+.crypto-price {
+  @apply font-mono text-2xl font-bold;
+}
+
+.price-change {
+  @apply font-mono text-sm font-medium;
+}
+
+/* Loading Skeleton Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Gradient Backgrounds */
+.crypto-gradient {
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+}
+
+.defi-gradient {
+  background: linear-gradient(135deg, #311b92 0%, #4527a0 100%);
+}
+
+.nft-gradient {
+  background: linear-gradient(135deg, #1565c0 0%, #0288d1 100%);
+}
