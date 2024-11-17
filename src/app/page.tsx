@@ -1,4 +1,3 @@
-import Navigation from "@/components/layout/Navigation";
 import BreakingNews from "@/components/news/BreakingNews";
 import FeaturedNews from "@/components/news/FeaturedNews";
 import LatestNews from "@/components/news/LatestNews";
@@ -7,14 +6,12 @@ import {
   breakingNews, 
   featuredNews, 
   latestNews, 
-  categories 
+  cryptoNews 
 } from "@/data/news";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navigation categories={categories} />
-      
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-12">
           <BreakingNews news={breakingNews} />
@@ -24,7 +21,7 @@ export default function Home() {
           <FeaturedNews news={featuredNews} />
         </div>
 
-        <CryptoNews />
+        <CryptoNews news={cryptoNews} />
 
         <LatestNews news={latestNews} />
       </main>

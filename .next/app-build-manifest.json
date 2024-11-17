@@ -1,53 +1,45 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/webpack-decb145ea5426c4a.js",
-      "static/chunks/4bd1b696-80bcaf75e1b4285e.js",
-      "static/chunks/517-d37038eff5a4ec16.js",
-      "static/chunks/main-app-71d080d00a892014.js",
-      "static/chunks/app/_not-found/page-27be82837fcb8fff.js"
-    ],
     "/layout": [
-      "static/chunks/webpack-decb145ea5426c4a.js",
-      "static/chunks/4bd1b696-80bcaf75e1b4285e.js",
-      "static/chunks/517-d37038eff5a4ec16.js",
-      "static/chunks/main-app-71d080d00a892014.js",
-      "static/css/030a49bdbe491c4a.css",
-      "static/chunks/app/layout-64d5f9027cde3628.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/news/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/news/layout.js"
+    ],
+    "/news/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/news/[id]/page.js"
+    ],
+    "/api/markdown/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/markdown/route.js"
     ],
     "/page": [
-      "static/chunks/webpack-decb145ea5426c4a.js",
-      "static/chunks/4bd1b696-80bcaf75e1b4285e.js",
-      "static/chunks/517-d37038eff5a4ec16.js",
-      "static/chunks/main-app-71d080d00a892014.js",
-      "static/chunks/839-143d35f0bfb554fa.js",
-      "static/chunks/565-e1afc9de22a3050a.js",
-      "static/chunks/app/page-9ab50b6be735b139.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/crypto/layout": [
-      "static/chunks/webpack-decb145ea5426c4a.js",
-      "static/chunks/4bd1b696-80bcaf75e1b4285e.js",
-      "static/chunks/517-d37038eff5a4ec16.js",
-      "static/chunks/main-app-71d080d00a892014.js",
-      "static/chunks/839-143d35f0bfb554fa.js",
-      "static/chunks/app/crypto/layout-fab75e68e166035d.js"
-    ],
-    "/crypto/[id]/page": [
-      "static/chunks/webpack-decb145ea5426c4a.js",
-      "static/chunks/4bd1b696-80bcaf75e1b4285e.js",
-      "static/chunks/517-d37038eff5a4ec16.js",
-      "static/chunks/main-app-71d080d00a892014.js",
-      "static/chunks/565-e1afc9de22a3050a.js",
-      "static/chunks/app/crypto/[id]/page-47cab6d88b2ba2a6.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/crypto/layout.js"
     ],
     "/crypto/page": [
-      "static/chunks/webpack-decb145ea5426c4a.js",
-      "static/chunks/4bd1b696-80bcaf75e1b4285e.js",
-      "static/chunks/517-d37038eff5a4ec16.js",
-      "static/chunks/main-app-71d080d00a892014.js",
-      "static/chunks/839-143d35f0bfb554fa.js",
-      "static/chunks/565-e1afc9de22a3050a.js",
-      "static/chunks/app/crypto/page-ac632121f068f936.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/crypto/page.js"
+    ],
+    "/crypto/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/crypto/[id]/page.js"
     ]
   }
 }
