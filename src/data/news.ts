@@ -4,11 +4,19 @@ export const breakingNews = {
   description: "Scientists use artificial intelligence to predict weather patterns with unprecedented accuracy, marking a significant advancement in climate science.",
   image: "https://picsum.photos/1200/600?random=1",
   category: "Technology",
-  date: "2024-02-16",
-  externalLink: "https://edition.cnn.com/"
+  date: "2024-02-16"
 };
 
 export const featuredNews = [
+  {
+    id: 2,
+    title: "Trump's Wild White House Pet: Meet Musk the Mischievous Squirrel",
+    description: "Former President Donald Trump introduced a unique addition to the White House - a squirrel named Musk, who became the first-ever presidential squirrel companion.",
+    image: "/squirrel.jpeg",
+    category: "Politics",
+    date: "2024-02-16",
+    articlePath: "src/data/articles/trump-musk-squirrel.md"
+  },
   {
     id: 3,
     title: "Global Economic Summit Concludes",
@@ -86,16 +94,7 @@ export const cryptoNews = [
     category: "Cryptocurrency",
     date: "2024-02-16",
     articlePath: "src/data/articles/defi-record.md"
-  },
-  {
-    id: 11,
-    title: "Trump's Wild White House Pet: Meet Musk the Mischievous Squirrel",
-    description: "Former President Donald Trump introduced a unique addition to the White House - a squirrel named Musk, who became the first-ever presidential squirrel companion.",
-    image: "/squirrel.jpeg",
-    category: "Cryptocurrency",
-    date: "2024-11-16",
-    articlePath: "src/data/articles/trump-musk-squirrel.md"
-  },
+  }
 ];
 
 export const categories = [

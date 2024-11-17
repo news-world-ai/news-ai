@@ -39,6 +39,8 @@ export default function LatestNews({ news }: LatestNewsProps) {
                   fill
                   sizes="(max-width: 640px) 100vw, 128px"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  priority
+                  unoptimized={item.image.startsWith('http')}
                 />
               </div>
               <div className="flex-1">
