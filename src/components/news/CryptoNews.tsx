@@ -53,7 +53,8 @@ export default function CryptoNews({ news }: CryptoNewsProps) {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   priority
-                  unoptimized={item.image.startsWith('http')}
+                  unoptimized
+                  loading="eager"
                 />
               </div>
               <div className="p-3 sm:p-4">
@@ -81,7 +82,7 @@ export default function CryptoNews({ news }: CryptoNewsProps) {
                         strokeLinecap="round" 
                         strokeLinejoin="round" 
                         strokeWidth={2} 
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
                       />
                     </svg>
                   )}

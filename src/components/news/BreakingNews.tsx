@@ -31,7 +31,8 @@ export default function BreakingNews({ news }: BreakingNewsProps) {
           fill
           sizes="(max-width: 1280px) 100vw, 1280px"
           priority
-          unoptimized={news.image.startsWith('http')}
+          unoptimized
+          loading="eager"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">

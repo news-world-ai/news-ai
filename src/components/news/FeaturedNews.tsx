@@ -36,7 +36,8 @@ export default function FeaturedNews({ news }: FeaturedNewsProps) {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   priority
-                  unoptimized={item.image.startsWith('http')}
+                  unoptimized
+                  loading="eager"
                 />
               </div>
               <div className="p-3 sm:p-4">

@@ -1,8 +1,0 @@
-{
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/markdown/route": "app/api/markdown/route.js",
-  "/page": "app/page.js",
-  "/crypto/[id]/page": "app/crypto/[id]/page.js",
-  "/crypto/page": "app/crypto/page.js",
-  "/news/[id]/page": "app/news/[id]/page.js"
-}
