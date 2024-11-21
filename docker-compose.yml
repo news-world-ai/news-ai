@@ -33,7 +33,6 @@ services:
     volumes:
       - ./src/data/articles:/app/src/data/articles:ro
       - ./prisma:/app/prisma:ro
-      - ./.next:/app/.next:ro
     depends_on:
       postgres:
         condition: service_healthy
@@ -50,20 +49,18 @@ services:
     container_name: news-ai-nginx
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./nginx:/etc/nginx/conf.d:ro
+      - ./ssl:/etc/nginx/ssl:ro
     environment:
-      - NGINX_HOST=newzuk.com
+      - NGINX_HOST=localhost
       - NGINX_PORT=80
     depends_on:
-      news-ai:
-        condition: service_healthy
+      - news-ai
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:80/ || exit 1"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+    networks:
+      - default
 
 volumes:
   postgres_data:
