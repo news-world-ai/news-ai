@@ -4,8 +4,9 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Install netcat
-RUN apk add --no-cache netcat-openbsd
+# Install netcat and install prisma globally with legacy-peer-deps
+RUN apk add --no-cache netcat-openbsd && \
+    npm install -g prisma --legacy-peer-deps
 
 # Set DATABASE_URL for Prisma
 ENV DATABASE_URL="postgresql://postgres:postgres@postgres:5432/newsai"
