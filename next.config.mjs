@@ -14,6 +14,23 @@ const nextConfig = {
       }
     ],
   },
+  // Production URL configuration
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://newzuk.com' : '',
+  // Enable hostname rewrites
+  rewrites: async () => {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.newzuk.com',
+          },
+        ],
+        destination: 'https://newzuk.com/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
