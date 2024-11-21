@@ -10,6 +10,7 @@
 /.next/
 /out/
 .next
+.next/cache
 next-env.d.ts
 
 # Production

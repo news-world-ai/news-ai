@@ -22,6 +22,9 @@ export default function BreakingNews({ news }: BreakingNewsProps) {
     ? { href: news.externalLink, target: "_blank", rel: "noopener noreferrer" }
     : { href: `/news/${news.id}` };
 
+  // Check if image is external (starts with http/https) or local
+  const isExternalImage = news.image.startsWith('http');
+
   return (
     <WrapperComponent {...wrapperProps} className="block">
       <div className="relative h-[500px] rounded-lg overflow-hidden group">
@@ -30,9 +33,9 @@ export default function BreakingNews({ news }: BreakingNewsProps) {
           alt={news.title}
           fill
           sizes="(max-width: 1280px) 100vw, 1280px"
-          priority
-          unoptimized
-          loading="eager"
+          priority={!isExternalImage}
+          unoptimized={isExternalImage}
+          loading={isExternalImage ? "lazy" : "eager"}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">

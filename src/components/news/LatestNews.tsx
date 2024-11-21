@@ -30,6 +30,9 @@ export default function LatestNews({ news }: LatestNewsProps) {
             ? { href: item.externalLink, target: "_blank", rel: "noopener noreferrer" }
             : { href: `/news/${item.id}` };
 
+          // Check if image is external (starts with http/https) or local
+          const isExternalImage = item.image.startsWith('http');
+
           return (
             <WrapperComponent key={item.id} {...wrapperProps} className="flex flex-col sm:flex-row gap-3 sm:gap-4 group cursor-pointer">
               <div className="relative w-full sm:w-32 h-48 sm:h-32 flex-shrink-0 overflow-hidden rounded-lg">
@@ -39,9 +42,9 @@ export default function LatestNews({ news }: LatestNewsProps) {
                   fill
                   sizes="(max-width: 640px) 100vw, 128px"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  priority
-                  unoptimized
-                  loading="eager"
+                  priority={!isExternalImage}
+                  unoptimized={isExternalImage}
+                  loading={isExternalImage ? "lazy" : "eager"}
                 />
               </div>
               <div className="flex-1">

@@ -25,6 +25,9 @@ export default function FeaturedNews({ news }: FeaturedNewsProps) {
           ? { href: item.externalLink, target: "_blank", rel: "noopener noreferrer" }
           : { href: `/news/${item.id}` };
 
+        // Check if image is external (starts with http/https) or local
+        const isExternalImage = item.image.startsWith('http');
+
         return (
           <WrapperComponent key={item.id} {...wrapperProps} className="block">
             <div className="news-card group bg-white rounded-lg shadow-md overflow-hidden">
@@ -35,9 +38,9 @@ export default function FeaturedNews({ news }: FeaturedNewsProps) {
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  priority
-                  unoptimized
-                  loading="eager"
+                  priority={!isExternalImage} // Prioritize loading local images
+                  unoptimized={isExternalImage} // Only use unoptimized for external images
+                  loading={isExternalImage ? "lazy" : "eager"} // Eager load local images
                 />
               </div>
               <div className="p-3 sm:p-4">
